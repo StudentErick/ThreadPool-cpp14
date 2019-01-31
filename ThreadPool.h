@@ -83,6 +83,10 @@ ThreadPool::ThreadPool (int threadNum) {
     m_vecThreads.clear();
 }
 
+ThreadPool::~Thread() {
+    destroy();
+}
+
 ThreadPool* ThreadPool::getInstance (int threadNum) {
     if (m_pInstance == nullptr) {
         m_pInstance = new ThreadPool (threadNum);
